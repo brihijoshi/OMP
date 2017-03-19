@@ -1,4 +1,4 @@
-function o_pred=omp(m_tr,o_tr,m_te,o_te,s)
+function err=omp(m_tr,o_tr,m_te,o_te,s)
 %The algorithm
 
 [n,k] =size(m_tr);
@@ -13,7 +13,7 @@ while (counter<s)
     temp=zeros(k,1);
     ind=setdiff([1:k],supporter);
     for i=ind
-        temp(i)=m_tr(:,i)'*r/norm(m_tr(:,i));
+        temp(i)=m_tr(:,i)'*r;
     end
     [~,chs]=max(abs(temp));
     supporter(counter)=chs;

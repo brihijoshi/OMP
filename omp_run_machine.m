@@ -12,4 +12,4 @@ m_te=m(end-te+1:end,:);
 o_te=m_te(:,end);
 m_te=m_te(:,1:end-1);
 
-z=omp(m_tr,o_tr,m_te,o_te,5)
+z=OMP2(m_tr,o_tr,m_te,o_te,3)
